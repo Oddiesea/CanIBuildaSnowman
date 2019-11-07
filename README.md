@@ -10,7 +10,7 @@ You could look out the window, but why would you when this wonderful react-nativ
 
 - Git clone this repository.
 - Run `npm install` in the termal for this folder.
-- Set up your apikey.js file in the root directory, this must export the string of your openweathermap.org api key.
+- Set up your apikey.js file in the root directory, this must export the string of your [openweathermap.org](https://openweathermap.org) api key.
 - Run npm start to test your config in Expo.
 - When you're happy with your configuration run `expo publish` followed by `expo build:'YourMobileOsPlatform'`
 - Sit back and bask in the knowledge that you're always just a tap away from knowing wether you can build an amazing snowman.
