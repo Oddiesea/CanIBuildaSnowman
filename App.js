@@ -3,6 +3,7 @@ import { Platform, Text, View, StyleSheet } from "react-native";
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
 import styled from "styled-components";
+import checkForSnow from "./api";
 
 export default class App extends Component {
   state = {
@@ -30,7 +31,9 @@ export default class App extends Component {
   }
 
   componentWillMount() {
-    this._getLocationAsync();
+    this._getLocationAsync().then(
+      checkForSnow().then(isSnowing => this.setState({ isSnowing }))
+    );
   }
 
   _getLocationAsync = async () => {
