@@ -17,10 +17,10 @@ You could look out the window, but why would you when this wonderful react-nativ
 
 ----
 ## Built with
-- React-Native
-- Axios
-- StyleComponents
-- Expo
+- [React-Native](https://facebook.github.io/react-native/)
+- [Axios](https://www.axios.com/)
+- [StyledComponents](https://www.styled-components.com/)
+- [Expo](http://expo.io/)
 
 ### Licence
 [Apache](https://github.com/Oddiesea/CanIBuildaSnowman/blob/master/LICENCE.md)
