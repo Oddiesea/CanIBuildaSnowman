@@ -23,7 +23,7 @@ You could look out the window, but why would you when this wonderful react-nativ
 - Expo
 
 ### Licence
-[Apache](https://github.com/Oddiesea/CanIBuildaSnowman/blob/master)
+[Apache](https://github.com/Oddiesea/CanIBuildaSnowman/blob/master/LICENCE.md)
 
 
 
