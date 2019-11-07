@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Platform, Text, View, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
 import styled from "styled-components";
@@ -16,17 +16,20 @@ export default class App extends Component {
 
     const MessageWrapper = styled.View`
       text-align: center;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
+      height: 100%;
     `;
 
     const MessageText = styled.Text`
+      text-align: center;
       justify-content: center;
-      font-size: 30;
+      font-size: 50;
     `;
 
     return (
       <MessageWrapper>
+        <MessageText>Can I build a snowman?</MessageText>
         {isSnowing ? (
           <MessageText> Yes!</MessageText>
         ) : (
@@ -50,7 +53,7 @@ export default class App extends Component {
 
     const location = await Location.getCurrentPositionAsync({});
     const isSnowing = await checkForSnow(location);
-    console.log(isSnowing)
+    console.log(isSnowing);
     this.setState({ isSnowing });
   };
 }

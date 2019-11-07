@@ -12,4 +12,4 @@ const checkForSnow = async ({ coords: { latitude, longitude } }) => {
   return main === "Snow";
 };
 
-export default checkForSnow;
+export default checkForSnow
