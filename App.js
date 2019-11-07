@@ -3,7 +3,7 @@ import { Platform, Text, View, StyleSheet } from "react-native";
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
 import styled from "styled-components";
-import checkForSnow from "./api";
+import checkForSnow from "./Api";
 
 export default class App extends Component {
   state = {
@@ -12,28 +12,33 @@ export default class App extends Component {
     isSnowing: false
   };
 
-  MessageWrapper = styled.View`
-    text-align: center;
-  `;
-
-  MessageText = styled.Text`
-    justify-content: center;
-    font-size: 30;
-  `;
-
   render() {
     const { isSnowing } = this.props;
+
+    const MessageWrapper = styled.View`
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    `;
+
+    const MessageText = styled.Text`
+      justify-content: center;
+      font-size: 30;
+    `;
+
     return (
-      <this.MessageWrapper>
-        <this.MessageText>{isSnowing ? "Yes!" : "No."}</this.MessageText>;
-      </this.MessageWrapper>
+      <MessageWrapper>
+        {isSnowing ? (
+          <MessageText> Yes!</MessageText>
+        ) : (
+          <MessageText> No.</MessageText>
+        )}
+      </MessageWrapper>
     );
   }
 
-  componentWillMount() {
-    this._getLocationAsync().then(
-      checkForSnow().then(isSnowing => this.setState({ isSnowing }))
-    );
+  componentDidMount() {
+    this._getLocationAsync()
   }
 
   _getLocationAsync = async () => {
@@ -45,7 +50,9 @@ export default class App extends Component {
     }
 
     let location = await Location.getCurrentPositionAsync({});
-    this.setState({ location });
+    this.setState({ location }, () => {
+      console.log(this.state.location);
+    });
   };
 }
 
