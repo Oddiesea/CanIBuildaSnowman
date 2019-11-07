@@ -7,7 +7,6 @@ import checkForSnow from "./Api";
 
 export default class App extends Component {
   state = {
-    location: null,
     errorMessage: null,
     isSnowing: false
   };
@@ -38,7 +37,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this._getLocationAsync()
+    this._getLocationAsync();
   }
 
   _getLocationAsync = async () => {
@@ -49,10 +48,10 @@ export default class App extends Component {
       });
     }
 
-    let location = await Location.getCurrentPositionAsync({});
-    this.setState({ location }, () => {
-      console.log(this.state.location);
-    });
+    const location = await Location.getCurrentPositionAsync({});
+    const isSnowing = await checkForSnow(location);
+    console.log(isSnowing)
+    this.setState({ isSnowing });
   };
 }
 
