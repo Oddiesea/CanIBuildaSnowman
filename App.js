@@ -53,7 +53,6 @@ export default class App extends Component {
 
     const location = await Location.getCurrentPositionAsync({});
     const isSnowing = await checkForSnow(location);
-    console.log(isSnowing);
     this.setState({ isSnowing });
   };
 }
