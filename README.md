@@ -2,7 +2,7 @@
 
 It's the age old question, can I, or can I not build a snowman?
 
-You could look out the window, but why would you when this wonderful react-native app.
+You could look out the window, but why would you when this wonderful react-native app exists.
 
 ----
 
